@@ -2,22 +2,34 @@ from math import sqrt, pow
 
 class Punto2D:
     def __init__(self, x=0.0, y=0.0):
-        self.x = float(x)
-        self.y = float(y)
+        try:
+            self.x = float(x)
+            self.y = float(y)
+        except:
+            self.x = 0.0
+            self.y = 0.0
 
     def __del__(self):
         pass
 
     def pideleAlUsuarioTuEstado(self):
-        self.x = float(input('Dame mi x '))
-        self.y = float(input('Dame mi y '))
+        try:
+            self.x = float(input('Dame mi x '))
+            self.y = float(input('Dame mi y '))
+        except:
+            self.x = 0.0
+            self.y = 0.0
 
     def muestraTuEstado(self):
         print(self)
 
     def modificaTuEstado(self, x, y):
-        self.x = float(x)
-        self.y = float(y)
+        try:
+            self.x = float(x)
+            self.y = float(y)
+        except:
+            self.x = 0.0
+            self.y = 0.0
 
     def __str__(self):
         return f'({self.x}, {self.y})'
